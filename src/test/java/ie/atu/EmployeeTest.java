@@ -1,5 +1,5 @@
 package ie.atu;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -11,7 +11,7 @@ class EmployeeTest {
 
     @BeforeEach
     void setUp() {
-        myEmployee = new Employee();
+        myEmployee = new Employee("Aidan", "123456789123");
     }
 
     @Test
@@ -20,18 +20,20 @@ class EmployeeTest {
     }
 
     @Test
-    public void testNameSuccesss() {
-        assertEquals("Aidan", myEmployee.getName("Aidan"));
+    public void testNameSuccess() {
+        myEmployee.setName("Aidan");
+        assertEquals("Aidan", myEmployee.getName());
     }
 
-//    @Test
-//    void testNameFailure() {
-//        Exception ex = assertThrows(IllegalArgumentException.class,  ()  -> myEmployee.getName("a"));
-//    }
+   @Test
+   void testNameFailure() {
+       Exception ex = assertThrows(IllegalArgumentException.class,  ()  -> myEmployee.getName());
+   }
 
     @Test
     void testIdSuccess() {
-        assertEquals("123456789123", myEmployee.getId("123456789123"));
+        myEmployee.setId("123456789123");
+        assertEquals("123456789123", myEmployee.getId());
     }
 
     @Test

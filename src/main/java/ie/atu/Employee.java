@@ -6,7 +6,7 @@ public class Employee {
 
     public Employee() {
         name = " ";
-        id = "";
+        id = " ";
     }
 
     public Employee(String n, String i) {
@@ -14,7 +14,7 @@ public class Employee {
         id = i;
     }
 
-    public String getName(String n) {
+    public String getName() {
         return name;
     }
 
@@ -28,9 +28,10 @@ public class Employee {
             this.name = name;
         }
 
+
     }
 
-    public String getId(String s) {
+    public String getId() {
         return id;
     }
 
